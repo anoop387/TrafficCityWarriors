@@ -30,14 +30,7 @@ if uploaded_file is not None:
     my_data = input_df
     answer = Bard().get_answer(f'{input_text} this data {my_data}')['content']
     st.write(f'{answer}')
- # Create a sentiment analysis pipeline
-    sentiment_analyzer = pipeline("sentiment-analysis")
 
-    # Apply sentiment analysis to a text column
-    input_df["sentiment"] = input_df["text_column"].apply(lambda text: sentiment_analyzer(text)[0]["label"])
-
-    # Save the modified DataFrame
-    input_df.to_csv("data_with_sentiment.csv", index=False)
 
 else:
     st. markdown('----')
