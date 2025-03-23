@@ -22,6 +22,7 @@ if uploaded_file is not None:
     st.write(my_data)
 
     st.subheader("OpenAI Analysis")
+    os.environ['_BARD_API_KEY'] = "Your Key"
     api_key = os.environ.get("_BARD_API_KEY")
 
     default_multiline_text = """Transaction Amount should always match Reported Amount, except when the transaction involves cross-currency conversions, in which case a permissible deviation of up to 1% is allowed.
